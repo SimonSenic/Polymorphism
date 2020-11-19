@@ -23,6 +23,7 @@ public class Names {
                 set.add(name);
                 name = read.readLine();
             }
+            fr.close();
         }catch (IOException e){
             e.printStackTrace();
         }
