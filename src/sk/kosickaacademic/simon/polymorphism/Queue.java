@@ -35,8 +35,8 @@ public class Queue<T> {
     }
 
     public void print(){
-        for(T i:array)
-            System.out.println(i);
+        for(int i=array.size()-1; i>=0; i--)
+            System.out.println(array.get(i));
     }
 
     public void clear(){
@@ -52,15 +52,15 @@ public class Queue<T> {
     }
 
     public static void main(String[] args) {
-        Stack<String> st = new Stack(5);
-        st.push("Jozef");
-        st.push("Pavol");
-        st.push("Borat");
-        st.push("Miken");
-        st.push("Astatoro");
-        st.pop();
-        st.pop();
-        st.top();
-        st.print();
+        Queue<String> q = new Queue(5);
+        q.push("Jozef");
+        q.push("Pavol");
+        q.push("Borat");
+        q.push("Miken");
+        q.push("Astatoro");
+        q.pop();
+        q.pop();
+        q.top();
+        q.print();
     }
 }
