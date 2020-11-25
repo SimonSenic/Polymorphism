@@ -11,25 +11,25 @@ public class Queue<T> {
         array = new ArrayList();
     }
 
-    public void push(T value){
+    public void push(T value) throws StackException{
         if(isFull())
-            System.out.println("Stack is full.");
+            throw new StackException("Stack is full.");
         else
             array.add(0, value);
     }
 
-    public void pop(){
+    public void pop() throws StackException{
         if(isEmpty())
-            System.out.println("Stack is empty.");
+            throw new StackException("Stack is empty.");
         else{
             System.out.println(array.get(array.size()-1));
             array.remove(array.size()-1);
         }
     }
 
-    public void top(){
+    public void top() throws StackException{
         if(isEmpty())
-            System.out.println("Stack is empty.");
+            throw new StackException("Stack is empty.");
         else
             System.out.println(array.get(array.size()-1));
     }
@@ -53,14 +53,18 @@ public class Queue<T> {
 
     public static void main(String[] args) {
         Queue<String> q = new Queue(5);
-        q.push("Jozef");
-        q.push("Pavol");
-        q.push("Borat");
-        q.push("Miken");
-        q.push("Astatoro");
-        q.pop();
-        q.pop();
-        q.top();
-        q.print();
+        try {
+            q.push("Jozef");
+            q.push("Pavol");
+            q.push("Borat");
+            q.push("Miken");
+            q.push("Astatoro");
+            q.pop();
+            q.pop();
+            q.top();
+            q.print();
+        }catch(StackException e){
+            System.out.println(e.getMessage());
+        }
     }
 }
