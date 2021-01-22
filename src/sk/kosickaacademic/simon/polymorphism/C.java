@@ -9,4 +9,9 @@ public class C extends B{
     public void print() {
         System.out.println("Class C");
     }
+
+    @Override
+    public void drink() {
+        System.out.println("Fresh water");
+    }
 }

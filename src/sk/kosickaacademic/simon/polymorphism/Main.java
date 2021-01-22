@@ -11,6 +11,7 @@ public class Main {
         p2.print(); //print() from class C
         p2.animal(); //animal() from class B
         ((C)p2).programmingLanguage(); //programmingLanguage() from class B (type cast required)
+        ((C)p2).drink(); //drink() from class C (type cast required, in class A there is no such method)
         System.out.println();
 
         A p3 = new A(); //Constructor A

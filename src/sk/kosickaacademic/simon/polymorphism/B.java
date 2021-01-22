@@ -18,4 +18,9 @@ public class B extends A implements I2{
     public void programmingLanguage(){
         System.out.println("Class B loves Java");
     }
+
+    @Override
+    public void drink() {
+        System.out.println("Absinth");
+    }
 }
